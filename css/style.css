@@ -35,3 +35,8 @@ html, body {
 .jumbotron p {
   font-size: 1.75em;
 }
+
+img{
+  -webkit-filter: grayscale(75%); /* Chrome, Safari, Opera */
+  filter: grayscale(75%);
+}
