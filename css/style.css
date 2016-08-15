@@ -37,6 +37,16 @@ html, body {
 }
 
 img{
-  -webkit-filter: grayscale(75%); /* Chrome, Safari, Opera */
-  filter: grayscale(75%);
+  -webkit-filter: grayscale(90%);
+  filter: grayscale(90%);
+}
+
+img:hover{
+  -webkit-filter: none;
+  filter: none;
+  -webkit-transition: all 0.25s ease-in;
+  transition: all 0.25s ease-in;
+  -webkit-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  transform: scale(1.05);
 }
