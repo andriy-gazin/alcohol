@@ -48,6 +48,31 @@
     <meta name="title" content="Як супермаркети обходять закони про продаж алкоголю">
     <meta name="description" content="Як супермаркети обходять закони про продаж алкоголю">
 
+
+    <!-- Submit form -->
+    <script>
+        function postToGoogle() {
+            var addr = $('#address').val();;
+            var nm = $('#name').val();
+
+                $.ajax({
+                    url: "https://docs.google.com/forms/d/e/1FAIpQLSdJRiqcai-edtCJAsff8ksyhNB7KP8W3pmkQm29dF1KXE5fyQ/formResponse",
+                    data: { "entry.1997741430": addr, "entry.1528728260": nm },
+                    type: "POST",
+                    dataType: "xml"
+                    // statusCode: {
+                    //     0: function () {
+                    //         window.alert("Дякуємо");
+                    //     },
+                    //     200: function () {
+                    //         window.alert("Thank you");
+                    //     }
+                    // }
+                });
+        }
+    </script>
+
+
 </head>
 <body>
 
@@ -171,12 +196,12 @@
 
       <div class="form-group">
         <label for="address">Адреса</label>
-        <input type="text" id = "address" placeholder="місто, вулиця, будинок">
+        <input type="text" id = "address" name = "address" placeholder="місто, вулиця, будинок">
       </div>
 
       <div class="form-group">
         <label for="name">Назва</label>
-        <input type="text" id = "name" placeholder="напр., кафе 'Ластівка'">
+        <input type="text" id = "name" name = "name" placeholder="напр., кафе 'Ластівка'">
       </div>
 
       <button type="submit" class="btn btn-primary" onclick="postToGoogle()">Надіслати</button>
@@ -318,28 +343,6 @@
 
 <script src="js/bootstrap.min.js"></script>
 
-<!-- Submit form -->
-<script>
-    function postToGoogle() {
-        var addr = $('#address').text();
-        var nm = $('#name').text();
-
-            $.ajax({
-                url: "https://docs.google.com/forms/d/e/1FAIpQLSdJRiqcai-edtCJAsff8ksyhNB7KP8W3pmkQm29dF1KXE5fyQ/formResponse",
-                data: { "i.desc.1997741430": addr, "i.desc.1528728260": nm },
-                type: "POST",
-                dataType: "xml"
-                statusCode: {
-                    0: function () {
-                        window.alert("Дякуємо");
-                    },
-                    200: function () {
-                        window.alert("Thank you");
-                    }
-                }
-            });
-    };
-</script>
 
 <!--  Google analytics -->
 <script type="text/javascript">
