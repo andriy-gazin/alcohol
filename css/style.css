@@ -4,13 +4,12 @@ html, body {
 
 .cover {
   background-size: cover;
-
 }
 
 .container .jumbotron, .container-fluid .jumbotron {
     padding-left:1%;
     padding-right: 1%;
-    padding-top: 15%;
+    padding-top: 10%;
     background-color: #EFF2F4;
   }
 
@@ -49,4 +48,10 @@ img:hover{
   -webkit-transform: scale(1.05);
   -ms-transform: scale(1.05);
   transform: scale(1.05);
+}
+
+.fa-twitter, .fa-facebook{
+  padding-top: 2px;
+  padding-bottom: 2px;
+  background-color: lightgray;
 }
