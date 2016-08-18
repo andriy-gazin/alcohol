@@ -48,31 +48,6 @@
     <meta name="title" content="Як супермаркети обходять закони про продаж алкоголю">
     <meta name="description" content="Як супермаркети обходять закони про продаж алкоголю">
 
-
-    <!-- Submit form -->
-    <script>
-        function postToGoogle() {
-            var addr = $('#address').val();;
-            var nm = $('#name').val();
-
-                $.ajax({
-                    url: "https://docs.google.com/forms/d/e/1FAIpQLSdJRiqcai-edtCJAsff8ksyhNB7KP8W3pmkQm29dF1KXE5fyQ/formResponse",
-                    data: { "entry.1997741430": addr, "entry.1528728260": nm },
-                    type: "POST",
-                    dataType: "xml"
-                    // statusCode: {
-                    //     0: function () {
-                    //         window.alert("Дякуємо");
-                    //     },
-                    //     200: function () {
-                    //         window.alert("Thank you");
-                    //     }
-                    // }
-                });
-        }
-    </script>
-
-
 </head>
 <body>
 
@@ -204,30 +179,16 @@
 </div>
 
 <!-- map -->
-<iframe src="https://andriy-gazin.github.io/map/" width="100%" height="800px"></iframe>
-
 <div class="container">
   <!-- article continues -->
 
   <div class="row">
-    <p style="text-align:center"><b>Повідомте нам про незаконний продаж алкоголю!</b></p>
-    <!-- form -->
-    <form class="form-inline">
-
-      <div class="form-group">
-        <label for="address">Адреса</label>
-        <input type="text" id = "address" name = "address" placeholder="місто, вулиця, будинок">
-      </div>
-
-      <div class="form-group">
-        <label for="name">Назва</label>
-        <input type="text" id = "name" name = "name" placeholder="напр., кафе 'Ластівка'">
-      </div>
-
-      <button type="submit" class="btn btn-primary" onclick="postToGoogle()">Надіслати</button>
-
-    </form>
-
+    <div class="col-sm-12">
+      <iframe src="https://andriy-gazin.github.io/map/" width="100%" height="800px"></iframe>
+      <p style="text-align:center">
+        <button type="button" class="btn btn-default" onclick="sendMail()">Знайшли помилку на карті? Напишіть нам листа!</button>
+      </p>
+    </div>
   </div>
 
   <div class="row">
@@ -355,13 +316,21 @@
   </div>
 </footer>
 
-<!--todo CDNs here -->
-<!--<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>-->
+<!-- Jquery -->
 
 <script src="js/jquery-2.1.4.min.js"></script>
+
 <!-- Bootstrap Core JavaScript -->
 
 <script src="js/bootstrap.min.js"></script>
+
+<!--  Send Mail -->
+
+<script type="text/javascript">
+  function sendMail() {
+    window.open('mailto:textyorgua@gmail.com?subject=Помилка у карті ліцензій на продаж алкоголю');
+  }
+</script>
 
 
 <!--  Google analytics -->
