@@ -343,7 +343,7 @@
   var CartoDB_PositronNoLabels = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}.png', {
           attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="http://cartodb.com/attributions">CartoDB</a>',
           subdomains: 'abcd',
-          maxZoom: 16
+          maxZoom: 17
         }).addTo(mymap);
 
   // add labels
@@ -352,7 +352,7 @@
           attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
           subdomains: 'abcd',
           minZoom: 15,
-          maxZoom: 16,
+          maxZoom: 17,
           ext: 'png'
         }).addTo(mymap);
 
@@ -408,8 +408,8 @@
 
   // add search
 
-  var southWest = L.latLng(50.316879, 30.355551),
-      northEast = L.latLng(50.529751, 30.581539),
+  var southWest = L.latLng(50.2222, 30.2436),
+      northEast = L.latLng(50.599, 30.8177),
       bounds = L.latLngBounds(southWest, northEast);
 
   var osmGeocoder = new L.Control.OSMGeocoder({
