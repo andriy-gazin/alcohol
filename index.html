@@ -21,7 +21,10 @@
 
     <!-- Map CSS-->
     <link rel="stylesheet" href="css/leaflet.css" />
+    <link rel="stylesheet" href="css/leaflet-search.css"/>
+    <link rel="stylesheet" href="css/leaflet-search.mobile.css"/>
     <link rel="stylesheet" href="css/L.Control.Locate.scss" />
+    <link rel="stylesheet" href="http://k4r573n.github.io/leaflet-control-osm-geocoder/Control.OSMGeocoder.css" />
 
     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -203,7 +206,7 @@
         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
       </p>
     </div>
-    
+
     <div class="col-sm-12">
       <blockquote>
         <p>
@@ -324,7 +327,9 @@
 <!-- Map Scripts -->
 <script src="js/leaflet.js"></script>
 <script src="js/L.Control.Locate.js" charset="utf-8"></script>
+<script src="js/leaflet-search.js" charset="utf-8"></script>
 <script src='https://raw.github.com/calvinmetcalf/leaflet-ajax/master/dist/leaflet.ajax.min.js'></script>
+<script src="http://k4r573n.github.io/leaflet-control-osm-geocoder/Control.OSMGeocoder.js"> </script>
 
 <!--  Leaflet Map -->
 <script type="text/javascript">
@@ -403,6 +408,18 @@
 
   // add search
 
+  var southWest = L.latLng(50.316879, 30.355551),
+      northEast = L.latLng(50.529751, 30.581539),
+      bounds = L.latLngBounds(southWest, northEast);
+
+  var osmGeocoder = new L.Control.OSMGeocoder({
+          collapsed: false,
+          position: 'topright',
+          text: 'Шукати!',
+          bounds: bounds
+        });
+
+  mymap.addControl(osmGeocoder);
 
   //add legend
 
