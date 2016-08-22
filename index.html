@@ -101,7 +101,7 @@
       <p>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
       </p>
-      <p>Текст: <b>Любов Величко</b>. Аналіз і візуалізація даних: <b>Андрій Газін</b></p>
+      <p>Текст: <b>Любов Величко</b></p>
       <p style="text-align:center">
         <i class="fa fa-glass" aria-hidden="true"></i>
         <i class="fa fa-glass" aria-hidden="true"></i>
@@ -188,7 +188,7 @@
       <p><i>Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</i></p>
     </div>
     <div class="col-sm-12" id = "mapid" style="min-height:600px"></div>
-      <p style="text-align:center;"><button type="button" class="btn btn-default" onclick="sendMail()">Знайшли помилку на карті? Напишіть нам листа!</button></p>
+      <p style="text-align:center;"><button type="button" class="btn btn-link" onclick="sendMail()">Знайшли помилку на карті? Напишіть нам листа!</button></p>
   </div>
 
   <!-- Article Continues -->
@@ -349,7 +349,7 @@
   // add labels
 
   var Stamen_TonerLabels = L.tileLayer('http://stamen-tiles-{s}.a.ssl.fastly.net/toner-labels/{z}/{x}/{y}.{ext}', {
-          attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+          attribution: '<a href="http://stamen.com">Stamen Design</a> Дані: ДФС у місті Києві станом на 1.07.2016',
           subdomains: 'abcd',
           minZoom: 15,
           maxZoom: 17,
@@ -422,6 +422,23 @@
   mymap.addControl(osmGeocoder);
 
   //add legend
+
+  var legend = L.control({position: 'bottomleft'});
+
+  legend.onAdd = function (mymap) {
+
+    var div = L.DomUtil.create('div', 'info legend'),
+        colors = ['#F2B138', '#327C8C'],
+        labels = ['супермаркети', 'місця з ліцензією на продаж алкоголю'];
+
+    for (var i = 0; i < colors.length; i++) {
+        div.innerHTML += '<i class="fa fa-circle" aria-hidden="true" style="color:' + colors[i] + '"></i> ' + labels[i] + '<br>';
+        }
+
+    return div;
+    };
+
+  mymap.addControl(legend);
 
 </script>
 
