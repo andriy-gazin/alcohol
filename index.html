@@ -356,10 +356,6 @@
           ext: 'png'
         }).addTo(map);
 
-  // add lacate control
-
-  var locateControl = L.control.locate({strings:{title:"А що поблизу мене?"}, locateOptions: {maxZoom:19}, drawCircle: false, drawMarker:false, icon:'fa fa-map-marker'}).addTo(map);
-
   // add supermarkets data
 
   $.getJSON("https://cdn.rawgit.com/andriy-gazin/map/gh-pages/data/supermarkets.geojson",function(data){
@@ -406,21 +402,6 @@
        }).addTo(map);
      });
 
-  // add search
-
-  var southWest = L.latLng(50.2222, 30.2436),
-      northEast = L.latLng(50.599, 30.8177),
-      bounds = L.latLngBounds(southWest, northEast);
-
-  var search = new L.Control.OSMGeocoder({
-          collapsed: false,
-          position: 'topright',
-          text: 'Шукати!',
-          bounds: bounds
-        });
-
-  map.addControl(search);
-
   //add legend
 
   var legend = L.control({position: 'bottomleft'});
@@ -439,6 +420,27 @@
     };
 
   map.addControl(legend);
+
+  // add search
+
+  var southWest = L.latLng(50.2222, 30.2436),
+      northEast = L.latLng(50.599, 30.8177),
+      bounds = L.latLngBounds(southWest, northEast);
+
+  var search = new L.Control.OSMGeocoder({
+          collapsed: false,
+          position: 'topright',
+          text: 'Шукати!',
+          bounds: bounds
+        });
+
+  map.addControl(search);
+
+  // add locate control
+
+  var locate = L.control.locate({strings:{title:"А що поблизу мене?"}, locateOptions: {maxZoom:19}, drawCircle: false, drawMarker:false, icon:'fa fa-map-marker'});
+
+  map.addControl(locate);
 
 </script>
 
