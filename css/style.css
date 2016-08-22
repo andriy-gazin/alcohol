@@ -64,3 +64,9 @@ img:hover{
 .leaflet-control-geocoder{
   border-radius: 4px;
 }
+
+p .btn {
+  font-size: 10px;
+  color: black;
+  font-weight: lighter;
+}
