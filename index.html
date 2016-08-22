@@ -336,7 +336,7 @@
 
   // create map and set view
 
-  var mymap = L.map('mapid', {scrollWheelZoom:false}).setView([50.4501, 30.5234], 13);
+  var map = L.map('mapid', {scrollWheelZoom:false}).setView([50.4501, 30.5234], 13);
 
   // add base map
 
@@ -344,7 +344,7 @@
           attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="http://cartodb.com/attributions">CartoDB</a>',
           subdomains: 'abcd',
           maxZoom: 17
-        }).addTo(mymap);
+        }).addTo(map);
 
   // add labels
 
@@ -354,11 +354,11 @@
           minZoom: 15,
           maxZoom: 17,
           ext: 'png'
-        }).addTo(mymap);
+        }).addTo(map);
 
   // add lacate control
 
-  var locateControl = L.control.locate({strings:{title:"А що поблизу мене?"}, locateOptions: {maxZoom:19}, drawCircle: false, drawMarker:false, icon:'fa fa-map-marker'}).addTo(mymap);
+  var locateControl = L.control.locate({strings:{title:"А що поблизу мене?"}, locateOptions: {maxZoom:19}, drawCircle: false, drawMarker:false, icon:'fa fa-map-marker'}).addTo(map);
 
   // add supermarkets data
 
@@ -380,7 +380,7 @@
          onEachFeature: function (feature, layer) {
            layer.bindPopup('<b>' + feature.properties.network + '</b>' + '<br>' + feature.properties.request);
          }
-       }).addTo(mymap);
+       }).addTo(map);
      });
 
   // add licenses data
@@ -403,7 +403,7 @@
          onEachFeature: function (feature, layer) {
            layer.bindPopup('<b>' + feature.properties.name + '</b>' + '<br>' + feature.properties.request);
          }
-       }).addTo(mymap);
+       }).addTo(map);
      });
 
   // add search
@@ -419,13 +419,13 @@
           bounds: bounds
         });
 
-  mymap.addControl(search);
+  map.addControl(search);
 
   //add legend
 
   var legend = L.control({position: 'bottomleft'});
 
-  legend.onAdd = function (mymap) {
+  legend.onAdd = function (map) {
 
     var div = L.DomUtil.create('div', 'info legend'),
         colors = ['#F2B138', '#327C8C'],
@@ -438,10 +438,9 @@
     return div;
     };
 
-  mymap.addControl(legend);
+  map.addControl(legend);
 
 </script>
-
 
 <!--  Send Mail -->
 <script type="text/javascript">
