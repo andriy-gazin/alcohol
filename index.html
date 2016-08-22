@@ -412,14 +412,14 @@
       northEast = L.latLng(50.599, 30.8177),
       bounds = L.latLngBounds(southWest, northEast);
 
-  var osmGeocoder = new L.Control.OSMGeocoder({
+  var search = new L.Control.OSMGeocoder({
           collapsed: false,
           position: 'topright',
           text: 'Шукати!',
           bounds: bounds
         });
 
-  mymap.addControl(osmGeocoder);
+  mymap.addControl(search);
 
   //add legend
 
