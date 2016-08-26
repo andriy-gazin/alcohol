@@ -187,8 +187,24 @@
       <h4>Lorem ipsum dolor sit amet</h4>
       <p><i>Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</i></p>
     </div>
-    <div class="col-sm-12" id = "mapid" style="min-height:600px"></div>
-      <p style="text-align:center;"><button type="button" class="btn btn-link" onclick="sendMail()">Знайшли помилку на карті? Напишіть нам листа!</button></p>
+
+    <ul class="nav nav-tabs">
+      <li class="active"><a data-toggle="tab" href="#mapid">Дивитись карту</a></li>
+      <li><a data-toggle="tab" href="#table">Дивитись таблицю</a></li>
+    </ul>
+
+    <div class="tab-content">
+      <div id="mapid" style="min-height:600px" class="tab-pane fade in active">
+    </div>
+
+    <div id="table" class="tab-pane fade">
+    </div>
+  </div>
+
+  <!-- <div class="col-sm-12" id = "mapid" style="min-height:600px"></div> -->
+
+  <p style="text-align:center;"><button type="button" class="btn btn-link" onclick="sendMail()">Знайшли помилку на карті? Напишіть нам листа!</button></p>
+
   </div>
 
   <!-- Article Continues -->
@@ -438,7 +454,8 @@
 
   // add locate control
 
-  var locate = L.control.locate({strings:{title:"А що поблизу мене?"}, locateOptions: {maxZoom:19}, drawCircle: false, drawMarker:false, icon:'fa fa-map-marker'});
+  var locate = L.control.locate({strings:{title:"А що поблизу мене?"},
+                                locateOptions: {maxZoom:19}, drawCircle: false, drawMarker:false, icon:'fa fa-map-marker'});
 
   map.addControl(locate);
 
