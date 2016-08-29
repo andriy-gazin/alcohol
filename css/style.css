@@ -73,3 +73,7 @@ p .btn {
   font-size: 1.2em;
   line-height: 1.5em;
 }
+
+tbody, tr, td {
+  background-color: #EFF2F4;
+}
