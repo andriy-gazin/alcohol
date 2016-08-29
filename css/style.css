@@ -70,3 +70,9 @@ p .btn {
   color: black;
   font-weight: lighter;
 }
+
+#table{
+  min-height: 600px;
+  font-size: 1.2em;
+  line-height: 1.5em;
+}

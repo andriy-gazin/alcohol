@@ -192,12 +192,17 @@
     </div>
 
     <ul class="nav nav-tabs">
-      <li class="active"><a data-toggle="tab" href="#mapid">Карта</a></li>
+      <li class="active"><a data-toggle="tab" href="#map">Карта</a></li>
       <li><a data-toggle="tab" href="#table">Таблиця</a></li>
     </ul>
 
-    <div class="tab-content">
-      <div id="mapid" style="min-height:600px" class="tab-pane fade in active">
+  <div class="tab-content">
+
+    <div id="map" class="tab-pane fade in active">
+      <div id="mapid" style="min-height:600px" >
+
+      </div>
+      <p style="text-align:center;"><button type="button" class="btn btn-link" onclick="sendMail()">Знайшли помилку на карті? Напишіть нам листа!</button></p>
     </div>
 
     <div id="table" class="tab-pane fade">
@@ -207,7 +212,7 @@
                   <th>назва</th>
                   <th>номер ліцензії</th>
                   <th>вид господарської діяльності</th>
-                  <th>рочаток дії ліцензії</th>
+                  <th>початок дії ліцензії</th>
                   <th>закінчення дії ліцензії</th>
                   <th>адреса здійснення діяльності</th>
                   <th>стан</th>
@@ -219,7 +224,7 @@
 
   <!-- <div class="col-sm-12" id = "mapid" style="min-height:600px"></div> -->
 
-  <p style="text-align:center;"><button type="button" class="btn btn-link" onclick="sendMail()">Знайшли помилку на карті? Напишіть нам листа!</button></p>
+  <!-- <p style="text-align:center;"><button type="button" class="btn btn-link" onclick="sendMail()">Знайшли помилку на карті? Напишіть нам листа!</button></p> -->
 
   </div>
 
@@ -492,28 +497,11 @@
     $(document).ready(function() {
         $('#table_id').dataTable( {
             "ajax": "table.json",
-            "pageLength": 15,
-            "language":{
-              "sProcessing":   "Зачекайте...",
-              "sLengthMenu":   "Показати _MENU_ записів",
-              "sZeroRecords":  "Записи відсутні.",
-              "sInfo":         "Записи з _START_ по _END_ із _TOTAL_ записів",
-              "sInfoEmpty":    "Записи з 0 по 0 із 0 записів",
-              "sInfoFiltered": "(відфільтровано з _MAX_ записів)",
-              "sInfoPostFix":  "",
-              "sSearch":       "Пошук:",
-              "sUrl":          "",
-              "oPaginate": {
-                  "sFirst": "Перша",
-                  "sPrevious": "Попередня",
-                  "sNext": "Наступна",
-                  "sLast": "Остання"
-              },
-              "oAria": {
-                  "sSortAscending":  ": активувати для сортування стовпців за зростанням",
-                  "sSortDescending": ": активувати для сортування стовпців за спаданням"
-              }
-          }
+            "pageLength": 10,
+            "order": [[ 4, "asc" ]],
+            "language": {
+                "url": "Ukrainian.json"
+            }
         } );
     } );
 </script>
