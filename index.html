@@ -26,6 +26,9 @@
     <!-- Custom CSS-->
     <link href="css/style.css" rel="stylesheet">
 
+    <!-- Datatables CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css">
+
     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,800&subset=cyrillic,latin' rel='stylesheet' type='text/css'>
@@ -189,8 +192,8 @@
     </div>
 
     <ul class="nav nav-tabs">
-      <li class="active"><a data-toggle="tab" href="#mapid">Дивитись карту</a></li>
-      <li><a data-toggle="tab" href="#table">Дивитись таблицю</a></li>
+      <li class="active"><a data-toggle="tab" href="#mapid">Карта</a></li>
+      <li><a data-toggle="tab" href="#table">Таблиця</a></li>
     </ul>
 
     <div class="tab-content">
@@ -198,6 +201,19 @@
     </div>
 
     <div id="table" class="tab-pane fade">
+      <table id="table_id" class="display" width="100%">
+          <thead>
+              <tr>
+                  <th>назва</th>
+                  <th>номер ліцензії</th>
+                  <th>вид господарської діяльності</th>
+                  <th>рочаток дії ліцензії</th>
+                  <th>закінчення дії ліцензії</th>
+                  <th>адреса здійснення діяльності</th>
+                  <th>стан</th>
+              </tr>
+          </thead>
+      </table>
     </div>
   </div>
 
@@ -340,6 +356,9 @@
 <!-- Bootstrap Core JavaScript -->
 <script src="js/bootstrap.min.js"></script>
 
+<!-- Datatables -->
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+
 <!-- Map Scripts -->
 <script src="js/leaflet.js"></script>
 <script src="js/L.Control.Locate.js" charset="utf-8"></script>
@@ -466,6 +485,37 @@
   function sendMail() {
     window.open('mailto:textyorgua@gmail.com?subject=Помилка у карті ліцензій на продаж алкоголю');
   }
+</script>
+
+<!-- Datatable -->
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#table_id').dataTable( {
+            "ajax": "table.json",
+            "pageLength": 15,
+            "language":{
+              "sProcessing":   "Зачекайте...",
+              "sLengthMenu":   "Показати _MENU_ записів",
+              "sZeroRecords":  "Записи відсутні.",
+              "sInfo":         "Записи з _START_ по _END_ із _TOTAL_ записів",
+              "sInfoEmpty":    "Записи з 0 по 0 із 0 записів",
+              "sInfoFiltered": "(відфільтровано з _MAX_ записів)",
+              "sInfoPostFix":  "",
+              "sSearch":       "Пошук:",
+              "sUrl":          "",
+              "oPaginate": {
+                  "sFirst": "Перша",
+                  "sPrevious": "Попередня",
+                  "sNext": "Наступна",
+                  "sLast": "Остання"
+              },
+              "oAria": {
+                  "sSortAscending":  ": активувати для сортування стовпців за зростанням",
+                  "sSortDescending": ": активувати для сортування стовпців за спаданням"
+              }
+          }
+        } );
+    } );
 </script>
 
 <!--  Google analytics -->
