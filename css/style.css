@@ -19,17 +19,6 @@ html, body {
 
   }
 
-  iframe {
-    border-radius: 0;
-    border-color: white;
-  }
-
-  .form-inline{
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 10px;
-  }
 
 .jumbotron p {
   font-size: 1.75em;
@@ -50,11 +39,19 @@ img:hover{
   transform: scale(1.05);
 }
 
+.social-icons{
+  position: fixed;
+  z-index: 1000;
+}
+
+
 .fa-twitter, .fa-facebook{
   padding-top: 2px;
   padding-bottom: 2px;
   background-color: lightgray;
 }
+
+
 
 .legend {
   background: rgba(255, 255, 255, 0.7) none repeat scroll 0 0;
