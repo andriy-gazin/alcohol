@@ -40,13 +40,13 @@
     <meta property="og:title" content="Як супермаркети обходять закони про продаж алкоголю" />
     <meta property="og:image" content="http://texty.org.ua/d/logo.png" />
     <meta property="og:description" content="Як супермаркети обходять закони про продаж алкоголю" />
-    <meta property="og:url" content="http://texty.org.ua/d/" />
+    <meta property="og:url" content="http://texty.org.ua/d/alcohol" />
 
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:site" content="@textyorgua" />
     <meta property="twitter:account_id" content="49572937" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:url" content="http://texty.org.ua/d/" />
+    <meta name="twitter:url" content="http://texty.org.ua/d/alcohol" />
     <meta name="twitter:title" content="" />
     <meta name="twitter:description" content="" />
     <meta name="twitter:image:src" content="http://texty.org.ua/d/logo.png" />
@@ -396,7 +396,7 @@
 
   // add licenses data
 
-  $.getJSON("https://cdn.rawgit.com/andriy-gazin/map/gh-pages/data/kyiv.geojson",function(data){
+  $.getJSON("data/kyiv.geojson",function(data){
 
     var geojsonMarkerOptions = {
 
@@ -412,7 +412,7 @@
            return L.circleMarker(latlng, geojsonMarkerOptions);
          },
          onEachFeature: function (feature, layer) {
-           layer.bindPopup('<b>' + feature.properties.name + '</b>' + '<br>' + feature.properties.request);
+           layer.bindPopup('<b>' + feature.properties.name + '</b>' + '<br>' + feature.properties.address + '<br>' + "дійсна до " + feature.properties.to);
          }
        }).addTo(map);
      });
@@ -471,11 +471,11 @@
 <script type="text/javascript">
     $(document).ready(function() {
         $('#table_id').dataTable( {
-            "ajax": "table.json",
+            "ajax": "data/table.json",
             "pageLength": 10,
             "order": [[ 4, "asc" ]],
             "language": {
-                "url": "Ukrainian.json"
+                "url": "data/Ukrainian.json"
             }
         } );
     } );
