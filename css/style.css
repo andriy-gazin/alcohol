@@ -77,3 +77,8 @@ p .btn {
 tbody, tr, td {
   background-color: #EFF2F4;
 }
+
+.eta {
+  font-size: 1em !important;
+  margin: 0px !important;
+}

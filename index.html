@@ -80,6 +80,7 @@
         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
       </p>
       <p>Текст: <b>Любов Величко</b></p>
+      <p class="eta"></p>
       <p style="text-align:center">
         <i class="fa fa-glass" aria-hidden="true"></i>
         <i class="fa fa-glass" aria-hidden="true"></i>
@@ -240,13 +241,21 @@
     </div>
 
     <div class="col-sm-12">
-      <h2>Lorem ipsum dolor sit amet</h2>
+      <h2>Як перевірити ліцензію на продаж алкоголю? Інструкція</h2>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
       </p>
     </div>
 
     <div class="col-sm-12">
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </p>
+
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </p>
+
       <p>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
       </p>
@@ -336,6 +345,9 @@
 <!-- Bootstrap Core JavaScript -->
 <script src="js/bootstrap.min.js"></script>
 
+<!-- Reading Time -->
+<script src = "js/readingTime.js"> </script>
+
 <!-- Datatables -->
 <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
 
@@ -373,7 +385,7 @@
 
   // add supermarkets data
 
-  $.getJSON("https://cdn.rawgit.com/andriy-gazin/map/gh-pages/data/supermarkets.geojson",function(data){
+  $.getJSON("data/supermarkets.geojson",function(data){
 
     var geojsonMarkerOptions = {
 
@@ -389,7 +401,7 @@
           return L.circleMarker(latlng, geojsonMarkerOptions);
          },
          onEachFeature: function (feature, layer) {
-           layer.bindPopup('<b>' + feature.properties.network + '</b>' + '<br>' + feature.properties.request);
+           layer.bindPopup('<b>' + feature.properties.network + '</b>' + '<br>' + feature.properties.address);
          }
        }).addTo(map);
      });
@@ -479,6 +491,29 @@
             }
         } );
     } );
+</script>
+
+<!-- Reading Time Function -->
+<script type="text/javascript">
+$(function() {
+    var $article = $('.container');
+
+    $article.readingTime({
+        readingTimeTarget: $article.find('.eta'),
+        prependTimeString: 'час на прочитання: ',
+        wordsPerMinute: 275,
+        round: false,
+        lang: 'ua',
+        success: function() {
+            console.log('It worked!');
+        },
+        error: function(message) {
+            console.log(message);
+            $article.find('.eta').remove();
+        }
+    });
+});
+
 </script>
 
 <!--  Google analytics -->
