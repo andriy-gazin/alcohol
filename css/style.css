@@ -19,6 +19,9 @@ html, body {
 
   }
 
+  .jumbotron .h1, .jumbotron h1 {
+      font-size: 6em;
+  }
 
 .jumbotron p {
   font-size: 1.75em;
@@ -81,4 +84,36 @@ tbody, tr, td {
 .eta {
   font-size: 1em !important;
   margin: 0px !important;
+}
+
+/*media queries*/
+
+@media (max-width: 400px) {
+  .jumbotron .h1, .jumbotron h1 {
+      font-size: 2em;
+  }
+
+  .jumbotron p {
+    font-size: 1.4em;
+  }
+
+  blockquote p {
+    font-size: 1.1em;
+  }
+
+}
+
+@media (max-width: 600px) {
+  .jumbotron .h1, .jumbotron h1 {
+      font-size: 3em;
+  }
+
+  .jumbotron p {
+    font-size: 1.4em;
+  }
+
+  blockquote p {
+    font-size: 1.1em;
+  }
+
 }
