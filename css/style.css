@@ -28,8 +28,8 @@ html, body {
 }
 
 img{
-  -webkit-filter: grayscale(90%);
-  filter: grayscale(90%);
+  -webkit-filter: grayscale(60%);
+  filter: grayscale(60%);
 }
 
 img:hover{
@@ -88,6 +88,16 @@ tbody, tr, td {
 .time {
   font-size: 1.1em !important;
   margin: 0px !important;
+}
+
+.direct p {
+  font-size: 1em !important;
+  margin-bottom: 0px !important;
+  padding-bottom: 1.1em !important;
+}
+
+.figure-caption {
+  text-align: center;
 }
 
 /*media queries*/
