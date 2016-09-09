@@ -1,0 +1,21 @@
+{
+"type": "FeatureCollection",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+                                                                                
+"features": [
+{ "type": "Feature", "properties": { "name": "Фора", "address": "вул. Велика Васильківська, 143\/2", "status": "відсутній у публічному реєстрі, але є в базі ДФС", "lat": 50.413406, "lon": 30.527268 }, "geometry": { "type": "Point", "coordinates": [ 30.527268, 50.413406 ] } },
+{ "type": "Feature", "properties": { "name": "Новус", "address": "пр. Петра Григоренка, 18", "status": "відсутній у публічному реєстрі, але є в базі ДФС", "lat": 50.41081, "lon": 30.625853 }, "geometry": { "type": "Point", "coordinates": [ 30.625853, 50.41081 ] } },
+{ "type": "Feature", "properties": { "name": "АТБ", "address": "вул. Анни Ахматової, 15\/27", "status": "відсутній у публічному реєстрі, але є в базі ДФС", "lat": 50.409265, "lon": 30.633592 }, "geometry": { "type": "Point", "coordinates": [ 30.633592, 50.409265 ] } },
+{ "type": "Feature", "properties": { "name": "Велика кишеня", "address": "пр. Петра Григоренка, 26", "status": "відсутній у публічному реєстрі, але є в базі ДФС", "lat": 50.40657, "lon": 30.628322 }, "geometry": { "type": "Point", "coordinates": [ 30.628322, 50.40657 ] } },
+{ "type": "Feature", "properties": { "name": "АТБ", "address": "вул. Срібнокільска, 3Д", "status": "відсутній у публічному реєстрі, але є в базі ДФС", "lat": 50.400484, "lon": 30.63057 }, "geometry": { "type": "Point", "coordinates": [ 30.63057, 50.400484 ] } },
+{ "type": "Feature", "properties": { "name": "Сільпо", "address": "вул. Срібнокільска, 3Г", "status": "відсутній у публічному реєстрі, але є в базі ДФС", "lat": 50.401049, "lon": 30.631931 }, "geometry": { "type": "Point", "coordinates": [ 30.631931, 50.401049 ] } },
+{ "type": "Feature", "properties": { "name": "Сільпо", "address": "вул. Архітектора Вербицького, 1", "status": "відсутній у публічному реєстрі, але є в базі ДФС", "lat": 50.414632, "lon": 30.650962 }, "geometry": { "type": "Point", "coordinates": [ 30.650962, 50.414632 ] } },
+{ "type": "Feature", "properties": { "name": "ЕКО Маркет", "address": "вул. Краківська, 18А", "status": "відсутній у публічному реєстрі, але є в базі ДФС", "lat": 50.454906, "lon": 30.624374 }, "geometry": { "type": "Point", "coordinates": [ 30.624374, 50.454906 ] } },
+{ "type": "Feature", "properties": { "name": "Ашан", "address": "вул. Антоновича, 176", "status": "відсутній у публічному реєстрі, але є в базі ДФС", "lat": 50.412326, "lon": 30.522557 }, "geometry": { "type": "Point", "coordinates": [ 30.522557, 50.412326 ] } },
+{ "type": "Feature", "properties": { "name": "Новус", "address": "вул. Гната Хоткевича, 1А", "status": "є у публічному реєстрі, з іншим кодом платника податків", "lat": 50.458807, "lon": 30.632383 }, "geometry": { "type": "Point", "coordinates": [ 30.632383, 50.458807 ] } },
+{ "type": "Feature", "properties": { "name": "Фуршет", "address": "вул. Біломорська, 1", "status": "заявлена адреса не збігається із вказаною на ліцензії", "lat": 50.461302, "lon": 30.642865 }, "geometry": { "type": "Point", "coordinates": [ 30.642865, 50.461302 ] } },
+{ "type": "Feature", "properties": { "name": "Billa", "address": "пл. Дарницька, 1", "status": "ліцензія відсутня", "lat": 50.443146, "lon": 30.62626 }, "geometry": { "type": "Point", "coordinates": [ 30.62626, 50.443146 ] } },
+{ "type": "Feature", "properties": { "name": "Billa", "address": "вул. Гришка, 3", "status": "ліцензія відсутня", "lat": 50.396291, "lon": 30.632932 }, "geometry": { "type": "Point", "coordinates": [ 30.632932, 50.396291 ] } },
+{ "type": "Feature", "properties": { "name": "АТБ", "address": "вул. Ревуцького, 15", "status": "ліцензія відсутня", "lat": 50.416513, "lon": 30.644412 }, "geometry": { "type": "Point", "coordinates": [ 30.644412, 50.416513 ] } }
+]
+}
