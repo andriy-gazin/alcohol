@@ -2,6 +2,11 @@ html, body {
   background-color: #F5F5F3;
 }
 
+.row {
+  width:95%;
+  margin: auto;
+}
+
 .cover {
   background-size: cover;
 }
@@ -9,7 +14,7 @@ html, body {
 .container .jumbotron, .container-fluid .jumbotron {
     padding-left:1%;
     padding-right: 1%;
-    padding-top: 10%;
+    padding-top: 7.5%;
     background-color: #F5F5F3;
   }
 
@@ -71,7 +76,7 @@ p .btn {
 
 tbody, tr, td {
   background-color: #F5F5F3;
-  font-size: 1.1em;
+  font-size: 1em;
 }
 
 .time {
@@ -116,7 +121,7 @@ p span {
 }
 
 .quote {
-    color: #a4907c;
+    color: #d3c756;
     font-family: "Open Sans Condensed",sans-serif;
     font-size: 2.3em;
 }
@@ -131,11 +136,6 @@ p span {
     font-size: 1.5em !important;
 }
 
-.map-table{
-    padding-right: 1%;
-    padding-left: 1%;
-  }
-
 /*media queries*/
 
 @media (max-width: 400px) {
@@ -145,10 +145,6 @@ p span {
 
   .jumbotron p {
     font-size: 1.4em;
-  }
-
-  blockquote p {
-    font-size: 1.1em;
   }
 
   #mapid {
@@ -175,11 +171,8 @@ p span {
     font-size: 1.4em;
   }
 
-  blockquote p {
-    font-size: 1.1em;
-  }
 
-  #mapid {
+#mapid {
     min-height:500px;
   }
 
