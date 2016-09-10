@@ -3,7 +3,7 @@ html, body {
 }
 
 .row {
-  width:95%;
+  width:75%;
   margin: auto;
 }
 
@@ -16,6 +16,12 @@ html, body {
     padding-right: 1%;
     padding-top: 7.5%;
     background-color: #F5F5F3;
+  }
+
+  .jumbotron p {
+      font-size: 1.5em;
+      font-weight: 200;
+      margin-bottom: 15px;
   }
 
   h1, h2, h3, h4 {
@@ -34,7 +40,7 @@ html, body {
 }
 
   .jumbotron .h1, .jumbotron h1 {
-      font-size: 6em;
+      font-size: 5em;
   }
 
 .social-icons{
@@ -136,6 +142,11 @@ p span {
     font-size: 1.5em !important;
 }
 
+
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover {
+  background-color:#F5F5F3;
+}
+
 /*media queries*/
 
 @media (max-width: 400px) {
@@ -150,35 +161,15 @@ p span {
   #mapid {
     min-height:400px;
   }
-
-.map-table{
-    width: 90%;
-    margin: auto;
-  }
-
 }
 
-.nav-tabs > li.active > a, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover {
-  background-color:#F5F5F3;
-}
 
 @media (max-width: 600px) {
   .jumbotron .h1, .jumbotron h1 {
       font-size: 3em;
   }
 
-  .jumbotron p {
-    font-size: 1.4em;
-  }
-
-
 #mapid {
     min-height:500px;
   }
-
-.map-table{
-    width: 90%;
-    margin: auto;
-  }
-
 }
