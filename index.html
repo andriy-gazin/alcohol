@@ -91,7 +91,7 @@
         Чотири із чотирнадцяти відвіданих супермаркетів працюють без ліцензії на торгівлю алкоголем. Згідно із законом, на кожну касу, через яку «пробивають» алкоголь, має бути ліцензія. Жоден із магазинів, в яких ми побували, не показав, за яку кількість «алкогольних кас» він заплатив місцевій громаді. Несплачені за ліцензії кошти мали піти до бюджету Києва, тобто на громадський транспорт, дороги, дитсадки і школи. Натомість вони залишися в кишенях власників супермаркетів.
       </p>
       <p>Текст: <b>Любов Величко</b></p>
-      <p class="time"><i class="fa fa-clock-o" aria-hidden="true"></i>   <span class="eta"></span></p>
+      <p class="time"><i class="fa fa-clock-o" aria-hidden="true"></i>   <span class="eta" style="background-color:#F5F5F3;"></span></p>
     </div>
   </div>
 
@@ -317,7 +317,6 @@
       <img src="img/08.jpg" class="img-responsive thumbnail" alt="Бувають випадки, коли в супермаркеті алкоголь продають не на всіх касах">
       <figcaption class="figure-caption"><span>Бувають випадки, коли в супермаркеті алкоголь продають не на всіх касах</span></figcaption>
     </figure>
-
   </div>
 
   <div class="col-sm-12">
@@ -623,19 +622,31 @@
         }).addTo(visited);
 
 
-        $.getJSON("data/visited.geojson",function(data){
+        $.getJSON("data/visited.geojson", function(data){
 
-          var geojsonMarkerOptions = {
-            radius: 5,
-            fillColor: 'black',
-            color: '#F2B138',
-            weight: 0,
-            opacity: 0.5,
-            fillOpacity: 0.5};
 
+          //define colors for categories
+          function getColor(d) {
+            return d == 'ліцензія відсутня' ? '#d3c756' :
+                   d == 'заявлена адреса не збігається із вказаною на ліцензії'  ? '#d3c756' :
+                                               '#327C8C';
+              }
+
+          //define style
+          function style(feature) {
+            return {
+              radius: 6,
+              fillColor: getColor(feature.properties.status),
+              weight: 0,
+              opacity: 1,
+              fillOpacity: 0.75
+            };
+          }
+
+          //
           L.geoJson(data, {
               pointToLayer: function(feature, latlng){
-                return L.circleMarker(latlng, geojsonMarkerOptions);
+                return L.circleMarker(latlng, style(feature));
                },
                onEachFeature: function (feature, layer) {
                  layer.bindPopup('<b>' + feature.properties.name + '</b>' + '<br>' + feature.properties.address + '<br>' + feature.properties.status);
@@ -650,8 +661,8 @@
         legend.onAdd = function (map) {
 
         var div = L.DomUtil.create('div', 'info legend'),
-              colors = ['#C6401B', '#549DAD'],
-              labels = ['супермаркети без ліцензії на продаж алкоголю', 'супермаркети, які пройшли перевірку'];
+              colors = ['#d3c756', '#327C8C'],
+              labels = ['супермаркети без ліцензії', 'супермаркети з ліцензією'];
 
         for (var i = 0; i < colors.length; i++) {
               div.innerHTML += '<i class="fa fa-circle" aria-hidden="true" style="color:' + colors[i] + '"></i> ' + labels[i] + '<br>';

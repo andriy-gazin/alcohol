@@ -23,8 +23,8 @@ html, body {
   }
 
   h3 span {
-    background-color: #F0E68C;
-    padding: 5px;
+    background: #F0E68C;
+    line-height: normal;
   }
 
   p {
@@ -112,7 +112,7 @@ tbody, tr, td {
 }
 
 p span {
-  background-color: #F0E68C;
+  background: #F0E68C;
   padding: 2px;
 }
 
