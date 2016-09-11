@@ -53,6 +53,7 @@ html, body {
   padding-top: 2px;
   padding-bottom: 2px;
   background-color: lightgray;
+  margin-bottom: 2px;
 }
 
 .fa-clock-o {
